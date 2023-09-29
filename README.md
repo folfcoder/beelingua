@@ -2,6 +2,9 @@
 
 A userscript + API to show (highlight) answers to Beelingua exercises for BINUS students.
 
+![image](https://github.com/folfcoder/beelingua/assets/40331046/88db5878-1db5-413b-9108-1d9a087670e1)
+
+
 ## Installation
 
 1. **Install [Tampermonkey](https://www.tampermonkey.net/):** This script requires the Tampermonkey extension for your web browser.

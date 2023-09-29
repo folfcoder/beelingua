@@ -12,6 +12,8 @@ A userscript + API to show (highlight) answers to Beelingua exercises for BINUS 
 2. **Install Beelingua Helper:**
    - Click the following link to access the script: [Beelingua Helper Userscript](https://github.com/folfcoder/beelingua/raw/main/beelingua.user.js)
    - Click the 'Install' button on the page to add the script to Tampermonkey.
+  
+3. If you have Beelingua open before installing the script, you need to refresh the page for the script to work.
 
 ## Usage
 

@@ -19,6 +19,16 @@ A userscript + API to show (highlight) answers to Beelingua exercises for BINUS 
 
 Once installed, Beelingua Helper automates the process of retrieving answers from our API and highlights correct answers in purple.
 
+### API (For Developers)
+
+To incorporate Beelingua Helper's API into your project, simply make use of the following public API endpoint: `https://beelingua.folfcoder.workers.dev/{LANG}/{COURSE}/{UNIT}/{NUMBER}`.
+- LANG can be either JPN or ENG.
+- COURSE options include A1.1, C1.1, and others.
+- UNIT can be "UNIT X", "Checkpoint Y", or "Course Mastery" (pay attention to CAPS)
+- NUMBER should be specified as 1, 2, 3, and so on.
+
+For instance, if you need to access answer for JPN-A1.1, Unit 2, number 10, you can use the URL: `https://beelingua.folfcoder.workers.dev/JPN/A1.1/UNIT 2/10`.
+
 ## Notes
 
 Please don't abuse this script. Use it wisely and only when you're stuck. Don't use it to cheat on your exercises. I'm not responsible for any consequences that may occur if you use this script to cheat.

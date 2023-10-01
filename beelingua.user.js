@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         Beelingua Helper
 // @namespace    https://github.com/folfcoder/beelingua
-// @version      0.1
+// @downloadURL  https://github.com/folfcoder/beelingua/raw/main/beelingua.user.js
+// @updateURL    https://github.com/folfcoder/beelingua/raw/main/beelingua.user.js
+// @version      0.2
 // @description  Show answer keys for Beelingua.
 // @author       Kai Folf
 // @match        https://newbinusmaya.binus.ac.id/beelingua/*
@@ -10,10 +12,10 @@
 
 (function () {
     "use strict";
-    
+
     // Constants
     const ENDPOINT = "https://beelingua.folfcoder.workers.dev";
-    
+
     // Variables
     let lang, course, unit, number;
 
@@ -36,27 +38,25 @@
     // Function to fetch and highlight answers
     function fetchAndHighlightAnswers() {
         const elements = document.querySelectorAll(".secondary-color");
-        if (elements.length > 0) {
-            elements.forEach((element) => {
-                const newNum = parseInt(element.textContent);
-                if (!isNaN(newNum) && newNum !== number) {
-                    number = newNum;
-                    GM_log("[DEBUG] Nomor: " + number);
+        elements.forEach((element) => {
+            const newNum = parseInt(element.textContent);
+            if (!isNaN(newNum) && newNum !== number) {
+                number = newNum;
+                GM_log("[DEBUG] Nomor: " + number);
 
-                    fetch(`${ENDPOINT}/${lang}/${course}/${unit}/${number}`)
-                        .then((response) => response.json())
-                        .then((data) => {
-                            GM_log("[DEBUG] Jawaban: " + data);
-                            const options = document.querySelectorAll(".bl-content-center");
-                            options.forEach((option) => {
-                                if (data.includes(option.textContent)) {
-                                    option.style.border = "0.3rem solid rgb(255, 0, 255)";
-                                }
-                            });
+                fetch(`${ENDPOINT}/${lang}/${course}/${unit}/${number}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        GM_log("[DEBUG] Jawaban: " + data);
+                        const options = document.querySelectorAll(".bl-content-center");
+                        options.forEach((option) => {
+                            if (data.includes(option.textContent)) {
+                                option.style.border = "0.3rem solid rgb(255, 0, 255)";
+                            }
                         });
-                }
-            });
-        }
+                    });
+            }
+        });
     }
 
     // Create a MutationObserver to watch for changes in the DOM

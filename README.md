@@ -14,20 +14,29 @@ A userscript + API to show (highlight) answers to Beelingua exercises for BINUS 
    - Click the 'Install' button on the page to add the script to Tampermonkey.
   
 3. If you have Beelingua open before installing the script, you need to refresh the page for the script to work.
+## Course Available
+
+Answers are manually curated, not all courses are available in our database. Here's the list:
+
+### English
+- [ ] B1.1
+- [ ] B1.2
+- [ ] B2.1
+- [ ] B2.2
+- [ ] C1.1
+- [X] C1.2 (Partial)
+- [ ] C2.1
+- [ ] C2.2
+
+### Japanese
+- [X] A1.1 (Complete)
+- [X] A1.2 (Partial)
+- [ ] A2.1
+- [ ] A2.2
 
 ## Usage
 
 Once installed, Beelingua Helper automates the process of retrieving answers from our API and highlights correct answers in purple.
-
-### API (For Developers)
-
-To incorporate Beelingua Helper's API into your project, simply make use of the following public API endpoint: `https://beelingua.folfcoder.workers.dev/{LANG}/{COURSE}/{UNIT}/{NUMBER}`.
-- LANG can be either JPN or ENG.
-- COURSE options include A1.1, C1.1, and others.
-- UNIT can be "UNIT X", "Checkpoint Y", or "Course Mastery" (pay attention to CAPS)
-- NUMBER should be specified as 1, 2, 3, and so on.
-
-For instance, if you need to access answer for JPN-A1.1, Unit 2, number 10, you can use the URL: `https://beelingua.folfcoder.workers.dev/JPN/A1.1/UNIT 2/10`.
 
 ## Notes
 
